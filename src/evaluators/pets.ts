@@ -4,23 +4,19 @@ import weights from "./../data/weights.json" with { type: "json" };
 function evaluate(restaurant: Venue): EvaluationResult {
   // calculate score
   let score = 0;
+  const maxScore = 1;
+
   if (restaurant.pets_allowed === "yes") {
-    score += 1;
-  }
-
-  // weigh the score
-  let weightedScore = 0;
-  const foundWeight = weights.find((item) => item.name === "pets");
-
-  if (foundWeight) {
-    weightedScore = foundWeight.weight * score;
+    score = 1;
+  } else if (restaurant.pets_allowed === "no") {
+    score = -1;
   }
 
   return {
     criterion: "Pets",
-    score: weightedScore,
-    reason: "Pets allowed",
-    maxScore: 10,
+    score: score,
+    reason: "Is pets allowed",
+    maxScore: 1,
   };
 }
 

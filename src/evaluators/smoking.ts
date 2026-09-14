@@ -4,6 +4,8 @@ function evaluate(restaurant: Venue): EvaluationResult {
   let score = 0;
   if (restaurant.smoking_allowed === "yes") {
     score += -1;
+  } else if (restaurant.smoking_allowed == "no") {
+    score += 1;
   }
 
   return {

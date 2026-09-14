@@ -4,10 +4,12 @@ export interface Venue {
   smoking_allowed: "yes" | "no";
   suitable_for_couples: "yes" | "no";
   type: string;
-  pets_allowed: "yes" | "no";
+  pets_allowed: "yes" | "no" | "unknown";
   price_level: 1 | 2 | 3;
   noise_level: "quiet" | "moderate" | "loud";
   outdoor_seating: "yes" | "no";
+  total_score: number;
+  evaluations: EvaluationResult[];
 }
 
 export interface EvaluationResult {
