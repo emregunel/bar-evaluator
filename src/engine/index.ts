@@ -25,11 +25,47 @@ export function evaluateVenues(venues: Venue[], user: User) {
 
   // sort
   venues.sort((a, b) => b.total_score - a.total_score);
-  venues.forEach((venue) => {
-    console.log(
-      venue.name,
-      venue.total_score,
-      JSON.stringify(venue.evaluations),
-    );
+  const tableRows = venues.map((venue, venueIndex) => {
+    const row: Record<string, string | number> = {
+      Rank: venueIndex + 1,
+      Venue: venue.name,
+      "Total score": venue.total_score,
+    };
+
+    venue.evaluations.forEach((evaluation, evaluatorIndex) => {
+      const evaluator = enabledEvaluators[evaluatorIndex];
+
+      if (!evaluator) {
+        throw new Error(
+          `Evaluator for result ${evaluation.criterion} not found`,
+        );
+      }
+
+      const foundWeight = weights.find((item) => item.name === evaluator.name);
+
+      if (!foundWeight) {
+        throw new Error(`Weight for evaluation ${evaluator.name} not found`);
+      }
+
+      const weightedScore = evaluation.score * foundWeight.weight;
+
+      row[evaluation.criterion] =
+        `${evaluation.score} × ${foundWeight.weight} = ${weightedScore}`;
+    });
+
+    return row;
   });
+
+  console.log("\nVenue rankings");
+  console.log("Score format: raw score × weight = weighted contribution");
+  console.table(tableRows);
+
+  console.log("\nScoring rules");
+  console.table(
+    venues[0]?.evaluations.map((evaluation) => ({
+      Criterion: evaluation.criterion,
+      "Maximum score": evaluation.maxScore,
+      Reason: evaluation.reason,
+    })) ?? [],
+  );
 }

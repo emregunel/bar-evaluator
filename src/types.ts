@@ -15,7 +15,7 @@ export interface Venue {
 export interface EvaluationResult {
   criterion: string;
   score: number;
-  reason?: string;
+  reason: string;
   maxScore: number;
 }
 

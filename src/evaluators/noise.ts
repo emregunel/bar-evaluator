@@ -10,7 +10,7 @@ function evaluate(restaurant: Venue, user: User): EvaluationResult {
   return {
     criterion: "Noise",
     score,
-    reason: "Loud venues are penalized for users over 40",
+    reason: "Loud and age over 40: -1; otherwise: 0",
     maxScore: 1,
   };
 }

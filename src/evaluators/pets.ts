@@ -15,7 +15,7 @@ function evaluate(restaurant: Venue, user: User): EvaluationResult {
   return {
     criterion: "Pets",
     score: score,
-    reason: "Is pets allowed",
+    reason: "Allowed: +1; not allowed: -1; unknown: 0",
     maxScore: 1,
   };
 }

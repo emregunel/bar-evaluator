@@ -2,6 +2,7 @@ import type { Venue, Evaluator, EvaluationResult, User } from "../types.js";
 
 function evaluate(restaurant: Venue, user: User): EvaluationResult {
   let score = 0;
+
   if (restaurant.smoking_allowed && user.preferences.smoking_allowed) {
     if (restaurant.smoking_allowed === user.preferences.smoking_allowed) {
       score += 1;
@@ -13,8 +14,8 @@ function evaluate(restaurant: Venue, user: User): EvaluationResult {
   return {
     criterion: "Smoking",
     score,
-    reason: "Smoking allowed",
-    maxScore: 10,
+    reason: "Match: +1; mismatch: -1; unknown: 0",
+    maxScore: 1,
   };
 }
 
