@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Berghain",
+    "smoking_allowed": "yes",
+    "suitable_for_couples": "no",
+    "type": "nightclub",
+    "pets_allowed": "no",
+    "price_level": 3,
+    "noise_level": "loud",
+    "outdoor_seating": "no"
+  },
+  {
+    "id": 2,
+    "name": "Klunkerkranich",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "rooftop bar",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 3,
+    "name": "Prater Garten",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "beer garden",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 4,
+    "name": "Caf\u00e9 Luzia",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "cocktail bar",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 5,
+    "name": "Holzmarkt 25",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "cultural venue",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 6,
+    "name": "SO36",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "no",
+    "type": "music club",
+    "pets_allowed": "no",
+    "price_level": 2,
+    "noise_level": "loud",
+    "outdoor_seating": "no"
+  },
+  {
+    "id": 7,
+    "name": "BRLO Brwhouse",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "brewpub",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 8,
+    "name": "Monkey Bar",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "rooftop bar",
+    "pets_allowed": "no",
+    "price_level": 3,
+    "noise_level": "moderate",
+    "outdoor_seating": "yes"
+  },
+  {
+    "id": 9,
+    "name": "Zum Starken August",
+    "smoking_allowed": "yes",
+    "suitable_for_couples": "yes",
+    "type": "neighborhood bar",
+    "pets_allowed": "yes",
+    "price_level": 2,
+    "noise_level": "moderate",
+    "outdoor_seating": "no"
+  },
+  {
+    "id": 10,
+    "name": "Schwarze Traube",
+    "smoking_allowed": "no",
+    "suitable_for_couples": "yes",
+    "type": "cocktail bar",
+    "pets_allowed": "no",
+    "price_level": 3,
+    "noise_level": "quiet",
+    "outdoor_seating": "no"
+  }
+]
