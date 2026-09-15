@@ -1,7 +1,7 @@
-import type { Venue, Evaluator, EvaluationResult } from "../types.js";
+import type { Venue, Evaluator, EvaluationResult, User } from "../types.js";
 import weights from "./../data/weights.json" with { type: "json" };
 
-function evaluate(restaurant: Venue): EvaluationResult {
+function evaluate(restaurant: Venue, user: User): EvaluationResult {
   // calculate score
   let score = 0;
   const maxScore = 1;

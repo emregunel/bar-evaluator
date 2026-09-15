@@ -1,14 +1,14 @@
 import { enabledEvaluators } from "../evaluators/index.js";
-import { EvaluationResult, Evaluator, Venue } from "../types.js";
+import type { EvaluationResult, User, Venue } from "../types.js";
 import weights from "../data/weights.json" with { type: "json" };
 
-export function evaluateVenues(venues: Venue[]) {
+export function evaluateVenues(venues: Venue[], user: User) {
   for (const venue of venues) {
     venue.evaluations = [];
     let results: EvaluationResult[] = [];
     venue.total_score = 0;
     for (const evaluator of enabledEvaluators) {
-      const result = evaluator.evaluate(venue);
+      const result = evaluator.evaluate(venue, user);
 
       // weigh the scores
       const foundWeight = weights.find((item) => item.name == evaluator.name);

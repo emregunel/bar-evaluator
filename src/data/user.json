@@ -1,0 +1,10 @@
+{
+  "age": 28,
+  "with_partner": false,
+  "with_friends": false,
+  "gender": "male",
+  "preferences": {
+    "smoking_allowed": "yes",
+    "price_level": "all"
+  }
+}
