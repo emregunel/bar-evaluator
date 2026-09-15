@@ -1,11 +1,13 @@
-import type { Venue, Evaluator, EvaluationResult } from "../types.js";
+import type { Venue, Evaluator, EvaluationResult, User } from "../types.js";
 
-function evaluate(restaurant: Venue): EvaluationResult {
+function evaluate(restaurant: Venue, user: User): EvaluationResult {
   let score = 0;
-  if (restaurant.smoking_allowed === "yes") {
-    score += -1;
-  } else if (restaurant.smoking_allowed == "no") {
-    score += 1;
+  if (restaurant.smoking_allowed && user.preferences.smoking_allowed) {
+    if (restaurant.smoking_allowed === user.preferences.smoking_allowed) {
+      score += 1;
+    } else {
+      score -= 1;
+    }
   }
 
   return {

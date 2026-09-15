@@ -1,7 +1,7 @@
 export interface Venue {
   id: number;
   name: string;
-  smoking_allowed: "yes" | "no";
+  smoking_allowed?: "yes" | "no";
   suitable_for_couples: "yes" | "no";
   type: string;
   pets_allowed: "yes" | "no" | "unknown";
@@ -18,7 +18,19 @@ export interface EvaluationResult {
   reason?: string;
   maxScore: number;
 }
+
+export interface User {
+  age: number;
+  with_partner: boolean;
+  with_friends: boolean;
+  gender: string;
+  preferences: {
+    smoking_allowed?: "yes" | "no";
+    price_level: 1 | 2 | 3 | "all";
+  };
+}
+
 export interface Evaluator {
   name: string;
-  evaluate(restaurant: Venue): EvaluationResult;
+  evaluate(restaurant: Venue, user: User): EvaluationResult;
 }
