@@ -1,4 +1,5 @@
 [
   { "name": "smoking", "weight": 5 },
-  { "name": "pets", "weight": 6 }
+  { "name": "pets", "weight": 6 },
+  { "name": "noise", "weight": 1 }
 ]
